@@ -1,5 +1,3 @@
-import pino from 'pino';
+import {pino, type Logger} from "pino"
 
-export const logger = pino({
-  transport: process.env.NODE_ENV === 'development' ? { target: 'pino-pretty' } : undefined
-});
+export const logger : Logger = pino({})

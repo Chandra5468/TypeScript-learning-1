@@ -6,10 +6,10 @@ import { errorHandler } from './middlewares/errorHandler';
 
 const app = express();
 
-app.use(json());
+app.use(json({limit: '10mb'}));
 
 app.use('/api/v1/examples', exampleRouter);
-
+app.use('/api/fib/:n')
 app.use(errorHandler);
 
 export { app };
